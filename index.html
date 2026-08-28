@@ -1,1 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Joy Efe James | Engineer • Data Specialist • Technical Professional</title>
+
+  <meta name="description"
+        content="Portfolio of Joy Efe James, a Mechanical Engineering graduate with experience in project engineering, tender management, data annotation, data entry and technical operations.">
+
+  <style>
+    :root {
+      --dark: #111111;
+      --text: #242424;
+      --muted: #6d6d6d;
+      --cream: #f7f4ef;
+      --white: #ffffff;
+      --accent: #a77b55;
+      --border: #e6e1da;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 100px 25px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--cream);
+      padding-top: 130px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 88px);
+      line-height: 1.02;
+      margin-bottom: 25px;
+      letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      max-width: 700px;
+      font-size: 20px;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 13px 24px;
+      border: 1px solid var(--dark);
+      font-weight: 600;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .button.primary {
+      background: var(--dark);
+      color: white;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      opacity: 0.85;
+    }
+
+    /* GENERAL */
+
+    .section-title {
+      font-size: 42px;
+      margin-bottom: 15px;
+      letter-spacing: -1px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 50px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .about-grid p {
+      margin-bottom: 18px;
+    }
+
+    /* EXPERIENCE */
+
+    .experience-item {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+    }
+
+    .experience-date {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .experience-item h3 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .company {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .experience-item ul {
+      padding-left: 20px;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      background: var(--cream);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 35px;
+      border: 1px solid var(--border);
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-number {
+      color: var(--accent);
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .project-card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .skill {
+      border: 1px solid var(--border);
+      padding: 20px;
+      font-weight: 600;
+      background: #fff;
+    }
+
+    /* EDUCATION */
+
+    .education {
+      background: var(--dark);
+      color: white;
+    }
+
+    .education .section-intro {
+      color: #cfcfcf;
+    }
+
+    .education-card {
+      border-left: 2px solid var(--accent);
+      padding-left: 25px;
+    }
+
+    .education-card h3 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .education-card p {
+      color: #cccccc;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      background: var(--cream);
+    }
+
+    .contact h2 {
+      font-size: clamp(40px, 6vw, 65px);
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    footer {
+      padding: 30px 25px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .about-grid,
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .experience-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      section {
+        padding: 75px 20px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-container {
+        padding: 15px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+  <div class="nav-container">
+    <a href="#home" class="logo">JOY EFE JAMES</a>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Mechanical Engineer • Technical Professional • Data Specialist
+      </div>
+
+      <h1>
+        Hello, I'm <span>Joy.</span>
+      </h1>
+
+      <p>
+        A Mechanical Engineering graduate building a career across
+        engineering, project coordination, tender management,
+        data operations and emerging technology.
+      </p>
+
+      <div class="buttons">
+        <a href="#experience" class="button primary">
+          View My Experience
+        </a>
+
+        <a href="#contact" class="button">
+          Let's Connect
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+  <div class="container">
+
+    <div class="eyebrow">About Me</div>
+
+    <h2 class="section-title">
+      Engineering thinking. Digital skills. Real-world experience.
+    </h2>
+
+    <div class="about-grid">
+
+      <div>
+        <p>
+          I am a Mechanical Engineering graduate with a Second Class
+          Upper Division degree from the University of Port Harcourt.
+        </p>
+
+        <p>
+          My professional experience spans project engineering,
+          bidding and tender management, document control, workshop
+          operations, data annotation and data entry.
+        </p>
+      </div>
+
+      <div>
+        <p>
+          I enjoy working at the intersection of technical problem
+          solving, organization, technology and continuous learning.
+        </p>
+
+        <p>
+          This portfolio brings together the experiences, projects
+          and skills that have shaped my professional journey so far.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+  <div class="container">
+
+    <div class="eyebrow">Career</div>
+
+    <h2 class="section-title">Experience</h2>
+
+    <p class="section-intro">
+      A selection of my professional experience across engineering,
+      oil & gas services, technical operations and data work.
+    </p>
+
+
+    <div class="experience-item">
+
+      <div class="experience-date">
+        2025 — Present
+      </div>
+
+      <div>
+        <h3>Data Annotation Specialist</h3>
+        <div class="company">Freelance / AI Data Projects</div>
+
+        <ul>
+          <li>Annotated and labeled image, text and audio datasets.</li>
+          <li>Maintained high accuracy through quality-control checks.</li>
+          <li>Identified annotation errors and implemented corrections.</li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    <div class="experience-item">
+
+      <div class="experience-date">
+        2024 — 2025
+      </div>
+
+      <div>
+        <h3>Bidding & Tender Officer / Document Controller</h3>
+        <div class="company">
+          Steve Integrated Technical Services Ltd.
+        </div>
+
+        <ul>
+          <li>Reviewed RFQs, RFPs and ITTs from major industry clients.</li>
+          <li>Prepared cost estimates and commercial proposals.</li>
+          <li>Managed bid documentation and compliance requirements.</li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    <div class="experience-item">
+
+      <div class="experience-date">
+        2024
+      </div>
+
+      <div>
+        <h3>Project Engineer — NYSC</h3>
+        <div class="company">
+          Steve Integrated Technical Services Ltd.
+        </div>
+
+        <ul>
+          <li>Prepared work packs, method statements and JSA documents.</li>
+          <li>Coordinated with vendors, subcontractors and internal teams.</li>
+          <li>Supported successful completion of a perimeter fence project.</li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    <div class="experience-item">
+
+      <div class="experience-date">
+        2022 — 2025
+      </div>
+
+      <div>
+        <h3>Project Engineer — Intern</h3>
+        <div class="company">
+          B. Gomed Int'l Services Ltd.
+        </div>
+
+        <ul>
+          <li>Participated in site visits and field operations.</li>
+          <li>Tracked materials, equipment and manpower.</li>
+          <li>Supported technical drawings, scopes of work and bills of materials.</li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    <div class="experience-item">
+
+      <div class="experience-date">
+        2020 — 2021
+      </div>
+
+      <div>
+        <h3>Workshop Officer — Intern</h3>
+        <div class="company">
+          True Blue Energy Services Limited
+        </div>
+
+        <ul>
+          <li>Supported inventory management and stock records.</li>
+          <li>Worked within HSE policies and standard operating procedures.</li>
+          <li>Prepared job cards, service reports and requisition documents.</li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    <div class="experience-item">
+
+      <div class="experience-date">
+        2018 — 2020
+      </div>
+
+      <div>
+        <h3>Computer Operator — Part-time</h3>
+        <div class="company">
+          Green Light Cybercafe
+        </div>
+
+        <ul>
+          <li>Supported online registrations and document processing.</li>
+          <li>Handled printing, scanning and document editing.</li>
+          <li>Performed basic computer troubleshooting and maintenance.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projects">
+  <div class="container">
+
+    <div class="eyebrow">Selected Work</div>
+
+    <h2 class="section-title">Projects</h2>
+
+    <p class="section-intro">
+      A growing collection of engineering, data and digital work.
+    </p>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+        <div class="project-number">01</div>
+        <h3>Machine Cutting Fluid Production</h3>
+        <p>
+          Final-year engineering project focused on the production
+          of machine cutting fluids using African elemi.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-number">02</div>
+        <h3>Data Annotation</h3>
+        <p>
+          Dataset annotation and quality assurance work supporting
+          machine-learning data projects.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-number">03</div>
+        <h3>Data Entry & Research</h3>
+        <p>
+          Structured spreadsheet management, web research,
+          information verification and data organization.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-number">04</div>
+        <h3>Project Engineering</h3>
+        <p>
+          Engineering documentation, field coordination,
+          materials tracking and project execution support.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+  <div class="container">
+
+    <div class="eyebrow">Capabilities</div>
+
+    <h2 class="section-title">Skills</h2>
+
+    <p class="section-intro">
+      Technical and professional skills developed through engineering,
+      employment and freelance work.
+    </p>
+
+    <div class="skills-grid">
+
+      <div class="skill">Mechanical Engineering</div>
+      <div class="skill">Project Management</div>
+      <div class="skill">Tender Management</div>
+      <div class="skill">Document Control</div>
+      <div class="skill">Data Annotation</div>
+      <div class="skill">Data Entry</div>
+      <div class="skill">Microsoft Office</div>
+      <div class="skill">Google Workspace</div>
+      <div class="skill">SolidWorks</div>
+      <div class="skill">AutoCAD</div>
+      <div class="skill">Technical Documentation</div>
+      <div class="skill">Quality Assurance</div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- EDUCATION -->
+
+<section class="education" id="education">
+  <div class="container">
+
+    <div class="eyebrow">Education</div>
+
+    <h2 class="section-title">Education & Professional Development</h2>
+
+    <p class="section-intro">
+      Academic foundation and professional development supporting
+      my multidisciplinary career.
+    </p>
+
+    <div class="education-card">
+
+      <h3>Bachelor of Engineering — Mechanical Engineering</h3>
+
+      <p>
+        University of Port Harcourt
+      </p>
+
+      <p>
+        Second Class Upper Division
+      </p>
+
+      <br>
+
+      <p>
+        Additional professional development includes HSE training,
+        PMP training and QA/QC-related training.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <div class="container">
+
+    <div class="eyebrow">Contact</div>
+
+    <h2>Let's work together.</h2>
+
+    <p>
+      Whether you're a recruiter, employer, client or fellow
+      professional, I'd be happy to connect.
+    </p>
+
+    <div class="buttons" style="justify-content:center;">
+
+      <a
+        href="mailto:joychiamaka305@gmail.com"
+        class="button primary">
+        Email Me
+      </a>
+
+      <a
+        href="https://www.linkedin.com/"
+        target="_blank"
+        class="button">
+        LinkedIn
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+  © 2026 Joy Efe James. All rights reserved.
+</footer>
+
+
+</body>
+</html>
